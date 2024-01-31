@@ -2,7 +2,7 @@
 ## STAT GR5243/GU4243 Spring 2024 
 ### Project 1 What made people without children happy in their life?
 
-![image](figs/wordcloud.png) 
+![ScreenShot](../figs/1.png)
 
 Many things can make one's heart smile with joy. [HappyDB](https://rit-public.github.io/HappyDB/) is "a corpus of 100,000 crowd-sourced happy moments". Participants were given a simple *task*:
 
