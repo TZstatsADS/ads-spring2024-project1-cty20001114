@@ -90,33 +90,3 @@ Comparing these 4 bar charts for different age groups, I found that the Children
 2.   Women without children derive pleasure from those close to them, while Men without children derive more pleasure from themselves
 3.   Each group has a portion of overlapping happy words, but they vary in weights at each age.
 
-### Useful resources
-
-##### R pakcages
-* R [tidyverse](https://www.tidyverse.org/) packages
-* R [tidytext](https://cran.r-project.org/web/packages/tidytext/vignettes/tidytext.html)
-* [Text Mining with `R`](https://www.tidytextmining.com/)
-* R [DT](http://www.htmlwidgets.org/showcase_datatables.html) package
-* R [tibble](https://cran.r-project.org/web/packages/tibble/vignettes/tibble.html)
-* [Rcharts](http://rcharts.io/gallery/), quick interactive plots
-* [htmlwidgets](http://www.htmlwidgets.org/), javascript library adaptation in R. 
-
-##### Project tools
-* A brief [guide](http://rogerdudler.github.io/git-guide/) to git.
-* Putting your project on [GitHub](https://guides.github.com/introduction/getting-your-project-on-github/).
-
-##### Examples
-+ [Topic modeling](https://cran.r-project.org/web/packages/topicmodels/vignettes/topicmodels.pdf)
-+ [Clustering](http://www.statmethods.net/advstats/cluster.html)
-+ [Sentiment analysis of Trump's tweets](https://www.r-bloggers.com/sentiment-analysis-on-donald-trump-using-r-and-tableau/)
-
-##### Tutorials
-
-For this project we will give **tutorials** and give comments on:
-
-- GitHub
-- R notebook
-- Example on sentiment analysis and topic modeling
-
-
-
