@@ -1,5 +1,5 @@
-# ADS Project 1: What made you happy today?
+# ADS Project 1: What made people without children happy in their life?
 ### Output folder
 
-The output directory contains analysis output, processed datasets, logs, or other processed things.
+The output directory contains my python notebook.
 
