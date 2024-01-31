@@ -90,3 +90,4 @@ Comparing these 4 bar charts for different age groups, I found that the Children
 2.   Women without children derive pleasure from those close to them, while Men without children derive more pleasure from themselves
 3.   Each group has a portion of overlapping happy words, but they vary in weights at each age.
 
+For me personally, if I want to be happier, I need to try more new things with my friends.
