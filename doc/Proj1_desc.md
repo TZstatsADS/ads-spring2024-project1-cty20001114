@@ -1,8 +1,8 @@
 ## Applied Data Science @ Columbia
-## STAT GR5243/GU4243 Fall 2023 
-### Project 1 An R Notebook Data Story on Happy Moments
+## STAT GR5243/GU4243 Spring 2024 
+### Project 1 What made people without children happy in their life?
 
-![image](../figs/wordcloud.png)
+![image](../figs/屏幕截图 2024-01-31 064944.png)
 
 Many things can make one's heart smile with joy. [HappyDB](https://rit-public.github.io/HappyDB/) is "a corpus of 100,000 crowd-sourced happy moments". Participants were given a simple *task*:
 
