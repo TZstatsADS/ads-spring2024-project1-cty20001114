@@ -4,66 +4,91 @@
 
 ![ScreenShot](../figs/1.png)
 
-Many things can make one's heart smile with joy. [HappyDB](https://rit-public.github.io/HappyDB/) is "a corpus of 100,000 crowd-sourced happy moments". Participants were given a simple *task*:
-
-```
-What made you happy today? 
-
-Reflect on the past 24 hours, 
-and recall three actual events 
-that happened to you that made you happy. 
-Write down your happy moment 
-in a complete sentence.
-(Write three such moments.)
-```
-The goal of this project is to look deeper into the causes that make us happy. Natural language processing and text mining are natural tools to derive interesting findings in this collection of happy moments. 
-
-### Challenge 
-
-In this project you will carry out an exploratory data analysis of the corpus of [HappyDB](https://rit-public.github.io/HappyDB/) and write a blog on interesting findings.
-
-You are tasked to explore the texts using tools from text mining and natural language processing such as sentiment analysis, topic modeling, etc, all available in `R` and write a blog post using `R` Notebook. Your blog should be in the form of a `data story` blog on interesting trends and patterns identified by your analysis of these happy moments. 
+### Background
+I learned through [sample project](https://tzstatsads.github.io/tutorials/proj1_jiaqianyu.html)  that the HAPPY WORD for parents is mostly related to children. It is well known that the birth rate in developed countries goes down. Therefore, I began to wonder what people would be happy about if they didn't have children. The data comes from [HappyDB](https://rit-public.github.io/HappyDB/), which is "a corpus of 100,000 crowd-sourced happy moments". Participants were given a simple *task*:
 
 Data from the HappyDB project can be found on [GitHub](https://github.com/rit-public/HappyDB/tree/master/happydb/data). Before carrying out any analysis, you should read the [description of the data files](https://github.com/rit-public/HappyDB).
 
-Even though this is an individual project, you are **encouraged** to discuss with your classmates online and exchange ideas. 
+Before getting into the questions, I processed the raw data for convinient coding later.
 
-### Project organization
+I remove stop words, find target people I am looking for in this project, and processe text with demographic information in [‘demographic.csv’](../data/demographic.csv).
 
-A GitHub starter codes repo will be posted on piazza for you to fork and start your own project. 
+### Q1: What would people without children be happy about?
 
-#### Suggested workflow
-This is a relatively short project. We only have about two weeks of working time. In the starter codes, we provide you two basic data processing R notebooks to get you started. 
+To solve the question, I define people in ‘demographic.csv’ file is childless if 'parenthood' column is n. Then I calculate the parts per thousand(we use ppt instead later) of the number of times for top 100 word occurs in all the words. The following images show the ppt of each word.
 
-`Text_processing.rmd` cleans the text data while `HappyDB_RShiny.rmd` constrcuts a shiny app to quickly explore the data. There is not much detailed data analysis of the text data at the *moments* level, which should be the focus of your analysis.
+![ScreenShot](../figs/11.png)
 
-1. [wk1] Week 1 is the **data processing and mining** week. Read data description, **project requirement**, browse data and studies the R notebooks in the starter codes, and think about what to do and try out different tools you find related to this task.
-2. [wk1] Try out ideas on a *subset* of the data set to get a sense of computational burden of this project. 
-3. [wk2] Explore data for interesting trends and start writing your data story. 
+We found that for people without children, as we previously defined them, happy moments would often be characterized by the words 'made', 'got', 'went', 'new', 'friend'.
 
-#### Submission
-You should produce an R notebook (rmd and html files) in your GitHub project folder, where you should write a story or a blog post on happy moments based on your data analysis. Your story should be supported by your results and appropriate visualization
+I think for people who don't have kids, there's a good chance they're happy when they get something new, make something new, or go somewhere new.
 
-#### Repositary requirement
+This result can be shown more obviously by the words frequency bar charts below.
 
-The final repo should be under our class github organization (TZStatsADS) and be organized according to the structure of the starter codes. 
+![ScreenShot](../figs/2.png)
 
-```
-proj/
-├──data/
-├──doc/
-├──figs/
-├──lib/
-├──output/
-├── README
-```
-- The `data` folder contains the raw data of this project. These data should NOT be processed inside this folder. Processed data should be saved to `output` folder. This is to ensure that the raw data will not be altered. 
-- The `doc` folder should have documentations for this project, presentation files and other supporting materials. 
-- The `figs` folder contains figure files produced during the project and running of the codes. 
-- The `lib` folder contain computation codes for your data analysis. Make sure your README.md is informative about what are the programs found in this folder. 
-- The `output` folder is the holding place for intermediate and final computational results.
+When comparing the above bar chart with the 'Word Frequency in Happy Moments for mothers / fathers' bar chart in project ['Mom, wish you happy everyday!'](https://tzstatsads.github.io/tutorials/proj1_jiaqianyu.html), I found that there is a significant difference in the things that people with children are happy about compared to people without children.
 
-The root README.md should contain your name and an abstract of your findings. 
+From the bar chart, 'got', 'made', 'went', 'new' reflect that people without children **like new things**. 'good', 'last', 'really' shows that they are happy with **the things they are lucky to have**. 'friends', 'game' reflects that they are happy **when they talk about friends and games**.' today', 'yesterday' shows that they are happy **when they are closer to the present**.
+
+For me personally, if I didn't have kids in the future, I want to know what will make me happy. So, analyzing this further, do men and women without children differ on the word in happy moment?
+
+### Do men and women without kids have different happy moments?
+
+I solve this problem by distinguishing between men and women in demographic information. In [‘demographic.csv’](../data/demographic.csv), if gender column equals to m, he is male. If gender column equals to f, she is female. I make two graph of Top 100 Word proportions for Men and Women respectfully.
+
+![ScreenShot](../figs/3.png)
+
+![ScreenShot](../figs/4.png)
+
+Comparing the two images, we see that in the top 6 - top 10 words, males and females appear differently. By plotting the bar chart separately, we can see the results more clearly.
+
+![ScreenShot](../figs/5.png)
+
+![ScreenShot](../figs/6.png)
+
+Comparing the differences between the two bar graphs, I found that Men's happy moments are more in 'first', 'last' and 'game', while Women's happy moments are in 'boyfriend', 'husband', 'family', and 'sister'. **This interesting phenomenon illustrates how childless women derive pleasure from those close to them, while childless men derive more pleasure from themselves.**
+
+But, as far as I can remember, my grandparents and I had different interests. So, word in happy moment should be different too?
+
+Next, I'd like to take the analysis of the people without children a step further. I want to classify people by age group and study why people are happy between different age groups.
+
+
+### Q3: Do people of different ages have different words in happy moment?
+
+We segmented the data by United Nations categorization of age groups.
+
+0-15 : child
+
+15-24 : [youth](https://www.un.org/development/desa/youth/what-we-do/faq.html)
+
+24-60 : adult
+
+60+ (60-100 in this project) : [older person](https://emergency.unhcr.org/entry/43935/older-persons)
+
+As I processed the data, I realized that the sample in age 0-15 group is quite small, so it may not generate the correct conclusions in that group.
+
+![ScreenShot](../figs/12.png)
+
+I make the bar chart for each category respectfully.
+
+![ScreenShot](../figs/7.png)
+
+![ScreenShot](../figs/8.png)
+
+![ScreenShot](../figs/9.png)
+
+![ScreenShot](../figs/10.png)
+
+Comparing these 4 bar charts for different age groups, I found that the Children group would be happy for talking about family and school. The Youth group would be happy for new things, but family and school are also represented in the top 20. The Adults group is happy almost exclusively because of new things. The Older people group is happy because of their friends and having the ability to do things.
+
+**Each group has a portion of overlapping happy words, but they vary in weights at each age.**
+
+### Conclusions
+
+1.   People without children like new things, are happy with the things they are lucky to have, are happy when they talk about friends and games, and are always happy about the latest thing.
+2.   Women without children derive pleasure from those close to them, while Men without children derive more pleasure from themselves
+3.   Each group has a portion of overlapping happy words, but they vary in weights at each age.
 
 ### Useful resources
 
